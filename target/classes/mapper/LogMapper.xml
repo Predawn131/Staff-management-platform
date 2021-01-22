@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="aynu.wuhan.dao.LogDao">
+    <!--增-->
+    <insert id="addLog" parameterType="aynu.wuhan.vo.LogVO">
+        INSERT INTO `logtab` (`log_person`, `log_title`, `log_info`, `log_time`, `log_type`)
+        VALUES (#{logPerson}, #{logTitle}, #{logInfo}, #{logTime}, #{logType})
+    </insert>
+    <!--删-->
+    <delete id="deleteLogById" parameterType="int">
+        UPDATE `logtab` SET `log_display`=0 WHERE (`log_id`=#{logId})
+    </delete>
+    <!--改-->
+    <update id="updateLog" parameterType="aynu.wuhan.vo.LogVO">
+        UPDATE `logtab`
+        SET `log_person`=#{logPerson}, `log_title`=#{logTitle}, `log_info`=#{logInfo}, `log_time`=#{logTime}, `log_type`=#{logType}
+        WHERE (`log_id`=#{logId})
+    </update>
+    <!--查-->
+    <select id="queryById" resultType="aynu.wuhan.vo.LogVO" parameterType="int">
+        SELECT * FROM `logtab`
+        WHERE log_id=#{logId}
+    </select>
+
+    <select id="queryAllLog" resultType="aynu.wuhan.vo.LogVO">
+       SELECT * FROM `logtab` WHERE log_display = 1
+    </select>
+
+    <!-- 用户查询-->
+    <select id="selectLog" resultType="aynu.wuhan.vo.LogVO">
+        select * from logTab where log_person like "%" #{log.logPerson} "%" and log_title like "%" #{log.logTitle} "%" and log_type like "%" #{log.logType} "%" and log_display = 1
+        limit #{pageModel.firstLimitParam},#{pageModel.pageSize}
+    </select>
+    <!-- 查询记录数-->
+    <select id="selectLogCount" resultType="int" parameterType="aynu.wuhan.vo.LogVO">
+        select count(*) from logTab where log_person like "%" #{logPerson} "%" and log_title like "%" #{logTitle} "%" and log_type like "%" #{logType} "%" and log_display = 1
+    </select>
+    
+</mapper>

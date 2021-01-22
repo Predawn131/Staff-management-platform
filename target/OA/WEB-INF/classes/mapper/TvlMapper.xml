@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="aynu.wuhan.dao.TvlDao">
+    <!--增-->
+    <insert id="addTvl" parameterType="aynu.wuhan.vo.TvlVO">
+        INSERT INTO `tvltab` (`tvl_name`, `tvl_no`, `tvl_city`, `tvl_type`, `tvl_phone`, `tvl_info`, `tvl_startTime`, `tvl_endTime`)
+        VALUES (#{tvlName}, #{tvlNo}, #{tvlCity},#{tvlType}, #{tvlPhone}, #{tvlInfo}, #{tvlStartTime}, #{tvlEndTime})
+    </insert>
+    <!--删-->
+    <delete id="deleteTvlById" parameterType="int">
+        UPDATE `tvltab` SET `tvl_display`=0 WHERE (`tvl_id`=#{tvlId})
+    </delete>
+    <!--改-->
+    <update id="updateTvl" parameterType="aynu.wuhan.vo.TvlVO">
+        UPDATE `tvltab`
+        SET `tvl_name`=#{tvlName}, `tvl_no`=#{tvlNo}, `tvl_city`=#{tvlCity}, `tvl_type`=#{tvlType}, `tvl_phone`=#{tvlPhone}, `tvl_info`=#{tvlInfo}, `tvl_startTime`=#{tvlStartTime}, `tvl_endTime`=#{tvlEndTime}
+        WHERE (`tvl_id`=#{tvlId})
+    </update>
+    <!--查-->
+    <select id="queryById" resultType="aynu.wuhan.vo.TvlVO" parameterType="int">
+        SELECT * FROM `tvltab`
+        WHERE tvl_id=#{tvlId}
+    </select>
+
+    <select id="queryAllTvl" resultType="aynu.wuhan.vo.TvlVO">
+       SELECT * FROM `tvltab` WHERE tvl_display = 1
+    </select>
+
+    <!-- 用户查询-->
+    <select id="selectTvl" resultType="aynu.wuhan.vo.TvlVO" >
+        select * from tvltab where tvl_name like "%"#{tvl.tvlName}"%" and  tvl_type like "%"#{tvl.tvlType}"%" and tvl_display = 1
+        limit #{pageModel.firstLimitParam},#{pageModel.pageSize}
+    </select>
+    <!-- 查询记录数-->
+    <select id="selectTvlCount" resultType="int" parameterType="aynu.wuhan.vo.TvlVO">
+        select count(*) from tvltab where tvl_name like "%"#{tvlName}"%" and  tvl_type like "%"#{tvlType}"%" and tvl_display = 1
+    </select>
+
+</mapper>

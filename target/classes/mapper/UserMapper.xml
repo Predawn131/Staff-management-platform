@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="aynu.wuhan.dao.UserDao">
+
+    <insert id="addUser" parameterType="aynu.wuhan.vo.UserVO">
+        INSERT INTO `userTab` (`user_name`, `user_pw`, `user_hobby`, `user_sex`, `user_age`, `user_info`, `user_city`, `user_province`)
+        VALUES (#{userName}, #{userPw}, #{userHobby}, #{userSex}, #{userAge}, #{userInfo}, #{userCity}, #{userProvince})
+    </insert>
+
+    <delete id="deleteUserById" parameterType="int">
+        UPDATE `usertab` SET `user_display`=0 WHERE (`user_id`=#{userId})
+    </delete>
+
+    <update id="updateUser" parameterType="aynu.wuhan.vo.UserVO">
+        UPDATE `usertab`
+        SET `user_name`=#{userName}, `user_pw`=#{userPw}, `user_hobby`=#{userHobby}, `user_sex`=#{userSex}, `user_age`=#{userAge}, `user_info`=#{userInfo}, `user_city`=#{userCity}, `user_province`=#{userProvince}
+        WHERE (`user_id`=#{userId})
+
+    </update>
+    <update id="updateUserByPw"  parameterType="java.lang.String">
+        UPDATE `usertab`
+        SET `user_pw`=#{pw}
+        WHERE (`user_id`=#{id})
+
+    </update>
+
+    <select id="queryById" resultType="aynu.wuhan.vo.UserVO" parameterType="int">
+        SELECT * FROM `userTab`
+        WHERE user_id=#{userId}
+    </select>
+    <select id="queryByName" resultType="aynu.wuhan.vo.UserVO" parameterType="java.lang.String">
+        SELECT * FROM `userTab`
+        WHERE user_name=#{userName} and user_pw=#{userPw}
+    </select>
+    <select id="queryAllUser" resultType="aynu.wuhan.vo.UserVO">
+        SELECT * FROM `userTab` WHERE user_display = 1
+    </select>
+
+    <!-- 用户查询-->
+    <select id="selectUser" resultType="aynu.wuhan.vo.UserVO">
+        select * from userTab where user_name like "%" #{user.userName} "%" and user_display = 1
+        limit #{pageModel.firstLimitParam},#{pageModel.pageSize}
+    </select>
+    <!-- 查询记录数-->
+    <select id="selectUserCount" resultType="int" parameterType="aynu.wuhan.vo.UserVO">
+        select count(*) from userTab where user_name like "%" #{userName} "%" and user_display = 1
+    </select>
+</mapper>

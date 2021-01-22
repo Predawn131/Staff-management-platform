@@ -1,0 +1,215 @@
+body {
+	font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	line-height: 1;
+}
+
+body,
+.login-submit,
+.login-submit:before,
+.login-submit:after {
+	background: url("../img/true.png") no-repeat;
+	background-size: 1664px 782px;
+}
+
+.LoginWindow {
+	height: 200px;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -125px;
+	margin-left: -205px;
+	animation: LoginWindow 2s linear;
+}
+
+@keyframes LoginWindow {
+	0% {
+		filter: alpha(opacity=0);
+		opacity: 0;
+		margin-top: -115px;
+		margin-left: -195px;
+	}
+
+	70% {
+		filter: alpha(opacity=1);
+		opacity: 1;
+		margin-top: -115px;
+		margin-left: -195px;
+	}
+
+	100% {
+		margin-top: -125px;
+		margin-left: -205px
+	}
+}
+
+.login_frame {
+	height: 200px;
+	width: 400px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -124px;
+	margin-left: -204px;
+	box-shadow: 10px 10px 1px #000000;
+	animation: login_frame 2s linear;
+}
+
+@keyframes login_frame {
+	0% {
+		filter: alpha(opacity=0);
+		opacity: 0;
+	}
+
+	70% {
+		filter: alpha(opacity=0);
+		opacity: 0;
+	}
+
+	100% {
+		filter: alpha(opacity=1);
+		opacity: 1;
+	}
+
+}
+
+a {
+	color: #00a1d2;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.registration {
+	padding-left: 100px;
+	font-size: 13px;
+	font-weight: 100;
+	letter-spacing: 1px;
+}
+
+.login {
+	position: relative;
+	margin: 50px 0px 0px 20px;
+	width: 400px;
+	padding-right: 32px;
+	font-weight: 300;
+	color: #FFFFFF;
+}
+
+.login p {
+	margin: 0 0 10px;
+}
+
+input,
+button {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	font-weight: 300;
+	box-sizing: border-box;
+}
+
+input[type=text],
+input[type=password] {
+	padding: 0 10px;
+	width: 300px;
+	height: 40px;
+	background: #FFFFFF;
+	border: 0;
+	border-radius: 5px;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+	color: black;
+	background: #FFFFFF;
+	outline: 0;
+}
+
+.login-submit {
+	position: absolute;
+	top: 12px;
+	right: 57px;
+	width: 48px;
+	height: 48px;
+	padding: 8px;
+	border-radius: 32px;
+}
+
+.login-submit:before,
+.login-submit:after {
+	content: '';
+	z-index: 1;
+	position: absolute;
+}
+
+.login-submit:before {
+	top: 28px;
+	left: -4px;
+	width: 4px;
+	height: 10px;
+}
+
+.login-button {
+	position: relative;
+	z-index: 2;
+	width: 48px;
+	height: 48px;
+	padding: 0 0 48px;
+	text-indent: 120%;
+	white-space: nowrap;
+	overflow: hidden;
+	background: #FFFFFF;
+	border: 0;
+	border-radius: 24px;
+	cursor: pointer;
+	transition-duration: 0.8s;
+	transform: rotate(180deg);
+	animation: login_button 2s linear;
+}
+
+@keyframes login_button {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	70% {
+		transform: rotate(126deg);
+	}
+
+	100% {
+		transform: rotate(180deg);
+	}
+
+}
+
+.login-button:hover {
+	transform: rotate(360deg);
+}
+
+.login-button:before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	background: #00a2d3;
+	border-radius: 24px;
+}
+
+.login-button:active:before {
+	background: #0591ba;
+}
+
+.login-button:after {
+	content: '';
+	position: absolute;
+	top: 15px;
+	left: 12px;
+	width: 25px;
+	height: 19px;
+	background: url("../img/arrow.png") 0 0 no-repeat;
+}
+
