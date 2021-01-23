@@ -181,8 +181,8 @@ li{
 
 /*右边*/
 .right{
-    width: 89%;
-
+    width: 98%;
+    margin-left: 10px;
 
 }
 /*右边所在位置栏*/

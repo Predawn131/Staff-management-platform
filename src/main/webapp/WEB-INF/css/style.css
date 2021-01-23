@@ -155,23 +155,6 @@ input[type='button']:active, input[type='button']:focus,
 }*/
 
 /*欢迎登录页*/
-.wColck {
-    width: 88px;
-    height: 108px;
-    margin: 50px;
-    float: left;
-}
-.rx{
-    width: 320px;
-    height: 300px;
-    margin-top: 377px;
-    float: right;
-}
-
-.wFont {
-    float: left;
-    margin-top: 50px;
-}
 
 /* .wFont h2 {
     font-size: 30px;
