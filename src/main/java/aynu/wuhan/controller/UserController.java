@@ -24,10 +24,14 @@ public class UserController {
     public String login(){
         return "login";
     }
+    @RequestMapping("/index")
+    public String index(){
+        return "index";
+    }
 
     @RequestMapping("/checkUser")
     public String checkUser(String userName, String userPw, Model model, HttpSession session){
-        System.out.println("userName = " + userName+"userPw"+userPw);
+        System.out.println("userName = " + userName+ " " +"userPw"+userPw);
         UserVO flag = userService.queryByName(userName,userPw);
         System.out.println("flag = " + flag);
         if(flag !=null){
@@ -128,9 +132,10 @@ public class UserController {
     }
 
     @RequestMapping("/findUser")
-    public String findUser(@RequestParam(defaultValue = "1") int pageIndex, @RequestParam(defaultValue = "")String userName, Model model){
+    public String findUser(@RequestParam(defaultValue = "1") int pageIndex, @RequestParam(defaultValue = "")String userName, @RequestParam(defaultValue = "")String userRelname, Model model){
         UserVO uservo = new UserVO();
         uservo.setUserName(userName);
+        uservo.setUserRelname(userRelname);
 
         PageModel pageModel=new PageModel();
         pageModel.setPageIndex(pageIndex);

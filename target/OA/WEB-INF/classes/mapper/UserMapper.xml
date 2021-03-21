@@ -5,8 +5,8 @@
 <mapper namespace="aynu.wuhan.dao.UserDao">
 
     <insert id="addUser" parameterType="aynu.wuhan.vo.UserVO">
-        INSERT INTO `userTab` (`user_name`, `user_pw`, `user_hobby`, `user_sex`, `user_age`, `user_info`, `user_city`, `user_province`)
-        VALUES (#{userName}, #{userPw}, #{userHobby}, #{userSex}, #{userAge}, #{userInfo}, #{userCity}, #{userProvince})
+        INSERT INTO `userTab` (`user_name`, `user_pw`, `user_email`, `user_sex`, `user_age`, `user_info`, `user_city`, `user_relname`)
+        VALUES (#{userName}, #{userPw}, #{userEmail}, #{userSex}, #{userAge}, #{userInfo}, #{userCity}, #{userRelname})
     </insert>
 
     <delete id="deleteUserById" parameterType="int">
@@ -15,7 +15,7 @@
 
     <update id="updateUser" parameterType="aynu.wuhan.vo.UserVO">
         UPDATE `usertab`
-        SET `user_name`=#{userName}, `user_pw`=#{userPw}, `user_hobby`=#{userHobby}, `user_sex`=#{userSex}, `user_age`=#{userAge}, `user_info`=#{userInfo}, `user_city`=#{userCity}, `user_province`=#{userProvince}
+        SET `user_name`=#{userName}, `user_pw`=#{userPw}, `user_email`=#{userEmail}, `user_sex`=#{userSex}, `user_age`=#{userAge}, `user_info`=#{userInfo}, `user_city`=#{userCity}, `user_relname`=#{userRelname}
         WHERE (`user_id`=#{userId})
 
     </update>
@@ -40,7 +40,7 @@
 
     <!-- 用户查询-->
     <select id="selectUser" resultType="aynu.wuhan.vo.UserVO">
-        select * from userTab where user_name like "%" #{user.userName} "%" and user_display = 1
+        select * from userTab where user_name like "%" #{user.userName} "%" and user_relname like "%" #{user.userRelname} "%" and user_display = 1
         limit #{pageModel.firstLimitParam},#{pageModel.pageSize}
     </select>
     <!-- 查询记录数-->

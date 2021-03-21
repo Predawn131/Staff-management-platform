@@ -2,166 +2,6 @@
     margin: 0;
     padding: 0;
 }
-
-/*!*登录页面*!
-.login_bg {
-    background: url("../img/true.png") no-repeat!* 0 0 repeat-x *!;
-    background-size: 1664px 782px;
-}
-
-.lg{
-    height: 350px;
-    width: 800px;
-
-    margin: 160px auto;
-    background-color: rgba(70,130,180,0.5);
-}
-
-.loginBox {
-    width: 1000px;
-    !*margin: 0 auto;*!
-
-    !* background: url("../img/login_bg.jpg") 0 0 no-repeat; *!
-}
-
-.loginHeader {
-    !*padding-top: 160px;*!
-    width: 728px;
-    text-align: center;
-    padding-left: 100px;
-}
-
-.loginHeader h1 {
-    color: #fff;
-    !* text-shadow: 2px 2px #000; *!
-}
-
-.loginCont {
-    width: 388px;
-    height: 284px;
-    margin-left: 206px;
-    !*border: 1px solid red ;*!
-    !*margin: 0 auto;*!
-}
-
-.formBox {
-    position: relative;
-}
-
-!*输入框里默认输入字体*!
-::-webkit-input-placeholder {
-    color: rgb(190, 188, 188);
-    !*font-style: italic;*!
-}
-
-input:-moz-placeholder,
-textarea:-moz-placeholder {
-    color: rgb(190, 188, 188);
-    font-style: italic;
-}
-
-input {
-    outline: none;
-}
-
-.loginForm {
-    !*    background: url("../img/formBg.png") 0 0 no-repeat; *!
-    width: 320px;
-    height: 140px;
-    border-radius: 8px;
-    padding: 48px 38px 48px 30px;
-    !*border: 1px solid green;*!
-}
-
-.loginForm label {
-    width: 20%;
-    display: inline-block;
-    color: #fff;
-}
-
-.inputbox {
-    height: 60px;
-}
-
-.inputbox input {
-    width: 66%;
-    padding: 10px 5px 10px 20px;
-    border: 1px solid rgb(178, 178, 178);
-    border-radius: 19px;
-    !* -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
-    -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
-    box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset; *!
-
-}
-
-!*输入框得到焦点的效果*!
-.inputbox input:active, .providerAdd input:focus,
-.inputbox input:focus {
-    border: 1px solid rgba(91, 90, 90, 0.7);
-    background: rgba(238, 236, 240, 0.2);
-    -webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
-    -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
-    box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
-}
-
-.subBtn {
-    margin-left: 45px;
-}
-
-!*!!*登录页登录和重置按钮*!/.providerView a是供应商管理页面下信息查看也得返回按钮的样式*!
-input[type='submit'], input[type='reset'],input[type='button'] .providerView a {
-    width: 30%;
-    height: 36px;
-    cursor: pointer;
-    background: #60b3e7;
-    !*padding: 6px 18px;*!
-    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-    color: #fff;
-    font-size: 18px;
-    border: 1px solid #4682be;
-    border-radius: 18px;
-    margin-bottom: 10px;
-    margin-right: 22px;
-    margin-left: 22px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-    !* -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.07) inset,
-    0px 0px 0px 3px rgb(254, 254, 254),
-    0px 5px 3px 3px rgb(210, 210, 210);
-    -moz-box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.07) inset,
-    0px 0px 0px 3px rgb(254, 254, 254),
-    0px 5px 3px 3px rgb(210, 210, 210);
-    box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.07) inset,
-    0px 0px 0px 3px rgb(254, 254, 254),
-    0px 5px 3px 3px rgb(210, 210, 210);*!
-
-}
-
-input[type='submit']:hover, input[type='reset']:hover, input[type='button']:hover {
-    background: rgb(0,191,255);
-}
-
-input[type='submit']:active, input[type='submit']:focus,
-input[type='reset']:active, input[type='reset']:focus,
-input[type='button']:active, input[type='button']:focus,
-.providerView a:hover, .providerView a:active {
-    background: #2a5989;
-    border: 1px solid rgb(12, 76, 87);
-    -webkit-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
-    -moz-box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
-    box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.2) inset;
-}*/
-
-/*欢迎登录页*/
-
-/* .wFont h2 {
-    font-size: 30px;
-    line-height: 50px;
-    color: #FFF;
-} */
-
 .wFont p {
     font-size: 20px;
     line-height: 30px;
@@ -175,18 +15,22 @@ input[type='button']:active, input[type='button']:focus,
 }
 
 .providerTable tr {
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     background: #f6f7f9;
+
 }
 
-/* .providerTable tr:nth-child(odd) {
-    background: #f6f7f9;
-} */
+.providerTable td{
+    border-right: 2px solid rgba(209, 218, 223, 0.4);
+    border-bottom: 2px solid rgba(209, 218, 223, 0.4);
+}
+
 
 .providerTable tr:hover {
-    background: #60b3e7;
+
+    background-color: #f1c40f;
 }
 
 .firstTr {
@@ -199,19 +43,37 @@ input[type='button']:active, input[type='button']:focus,
 }
 
 .providerTable td a {
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     display: inline-block;
     margin-right: 10px;
 
 }
 
-/*供应商管理页面-->下面的信息查看页面*/
+/*管理页面-->下面的信息查看页面*/
 .providerView {
     margin: 20px 0;
     font-size: 18px;
     line-height: 30px;
     padding-top: 30px;
-    border: 1px dashed #3d4f1b;
+    padding-bottom: 30px;
+    border-radius: 8px;
+    /*border: 1px dashed #3d4f1b;*/
+    background-color: #f6f7f9;
+}
+.providerView .viewTable{
+    width: 40%;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+.providerView .viewTable th{
+    width: 50%;
+    text-align: justify-all;
+    border: 1px solid rgba(157, 174, 186, 0.4);
+}
+.viewTable tr:hover {
+
+    background-color: #f1c40f;
 }
 
 .providerView strong {
@@ -221,13 +83,48 @@ input[type='button']:active, input[type='button']:focus,
 }
 
 .providerView span {
-    color: #FFFFFF;
+    color: #1B9AF7;
 }
 
 .providerView a {
     margin-left: 520px;
     position: relative;
     top: 60px;
+}
+.caozuo a{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: transparent;
+    background: #47acf1;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    vertical-align: baseline;
+}
+.providerView .back{
+    margin: 15px auto;
+    margin-bottom: 20px;
+    width: 40%;
+}
+
+.caozuo input[type='button'] {
+    /*display: inline-block;*/
+    /*width: 60px;*/
+    height: 30px;
+    line-height: 30px;
+    /*margin: 5px 5px;*/
+    text-align: center;
+    /*border-radius: 15px;*/
+    /*border: transparent;*/
+    background: #e74c3c;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    /*vertical-align: baseline;*/
 }
 
 /*供应商管理页面-->供应商添加页面*/
@@ -237,10 +134,6 @@ input[type='button']:active, input[type='button']:focus,
     margin: 20px;
     background-color: rgba(248,248,255,0.5);
     font-size: 15px;
-}
-
-.providerAdd form {
-
 }
 
 .providerAdd div {
@@ -273,9 +166,6 @@ input[type='button']:active, input[type='button']:focus,
 .providerAdd input:focus,.providerAdd select:focus {
     border: 1px solid #0e56a8;
     background: rgba(238, 236, 240, 0.5);
-    /*-webkit-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;*/
-    /*-moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;*/
-    /*box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;*/
 }
 
 .providerAdd span {
@@ -302,40 +192,18 @@ input[type='button']:active, input[type='button']:focus,
 }
 
 .providerAddBtn {
-    margin-left: 240px;
+    width: 100%;
+
     padding-top: 20px;
 }
-
-.providerAddBtn a ,
-.providerAddBtn input[type='submit'],
-.providerAddBtn input[type='button'] {
-    display: inline-block;
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 15px;
-    border: transparent;
-    background: #47acf1;
-/*linear-gradient(to bottom, #85c0ec, #6aa7d6, #508dc6, #306fb4, #17559e)*/
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 14px;
-    vertical-align: top;
+.providerAddBtn input{
+    margin: 0 56px;
 }
 
-.providerAddBtn a:active,
-.providerAddBtn a:focus,
-.providerAddBtn a:hover,
-.providerAddBtn input[type='submit']:hover,
-.providerAddBtn input[type='submit']:focus,
-.providerAddBtn input[type='button']:hover,
-.providerAddBtn input[type='button']:focus{
-    background: #0778c5;
-/*linear-gradient(to bottom, #7aaed4, #578bb4, #406e99, #225792, #0d2d54)*/
+.providerAdd form{
+    width: 750px;
+    margin: 0 auto;
 }
-
 .providerAdd input[type='radio']{
     width: 20px;
     height: 14px;
@@ -359,6 +227,7 @@ input[type='button']:active, input[type='button']:focus,
     opacity: 0.7;
     filter: alpha(opacity=70);
     overflow: hidden;
+    z-index: 1000;
 }
 .remove{
     display: none;       /* 修改这里可以让删除框消失*/
@@ -369,10 +238,11 @@ input[type='button']:active, input[type='button']:focus,
     left:500px;
     background: #fff;
     border-radius: 4px;
+    z-index: 1001;
 }
 .removerChid{
     margin: 4px;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
 }
 .removerChid h2{
     padding-left: 8px;
@@ -394,7 +264,7 @@ input[type='button']:active, input[type='button']:focus,
     line-height: 30px;
     border-radius: 4px;
     border: 1px solid #5e8809;
-    margin-top: 30px;
+    margin: 30px 30px 0 30px;
     background: #99cc33;
     color: #fff;
 }

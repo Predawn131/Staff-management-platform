@@ -19,7 +19,7 @@
 
             <form method="post" action="/user/checkUser"  class="login">
                 <div id="userName" class="input" aria-placeholder="用户名">
-                    <input type="text" name="userName" id="user" value="" >
+                    <input type="text" name="userName" id="user" value="" autocomplete="off">
                 </div>
                 <div id="password" class="input" aria-placeholder="密码">
                     <input type="password" name="userPw" id="mima" value="">

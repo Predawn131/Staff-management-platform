@@ -4,13 +4,13 @@ public class UserVO {
     private int userId;
     private String userName;
     private String userPw;
-    private String userHobby;
+    private String userEmail;
     private String userSex;
     private int userAge;
     private String userInfo;
     private String userCity;
-    private String userProvince;
     private int userDisplay;
+    private  String userRelname;
 
     public int getUserId() {
         return userId;
@@ -36,12 +36,12 @@ public class UserVO {
         this.userPw = userPw;
     }
 
-    public String getUserHobby() {
-        return userHobby;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUserHobby(String userHobby) {
-        this.userHobby = userHobby;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getUserSex() {
@@ -76,14 +76,6 @@ public class UserVO {
         this.userCity = userCity;
     }
 
-    public String getUserProvince() {
-        return userProvince;
-    }
-
-    public void setUserProvince(String userProvince) {
-        this.userProvince = userProvince;
-    }
-
     public int getUserDisplay() {
         return userDisplay;
     }
@@ -92,19 +84,27 @@ public class UserVO {
         this.userDisplay = userDisplay;
     }
 
+    public String getUserRelname() {
+        return userRelname;
+    }
+
+    public void setUserRelname(String userRelname) {
+        this.userRelname = userRelname;
+    }
+
     @Override
     public String toString() {
         return "UserVO{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", userPw='" + userPw + '\'' +
-                ", userHobby='" + userHobby + '\'' +
+                ", userEmail='" + userEmail + '\'' +
                 ", userSex='" + userSex + '\'' +
                 ", userAge=" + userAge +
                 ", userInfo='" + userInfo + '\'' +
                 ", userCity='" + userCity + '\'' +
-                ", userProvince='" + userProvince + '\'' +
-                ", userDisplay=" + userDisplay +
+                ", userDisplay=" + userDisplay +'\'' +
+                ", userRelname=" + userRelname +
                 '}';
     }
 }

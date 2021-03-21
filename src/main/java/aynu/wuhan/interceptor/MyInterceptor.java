@@ -17,7 +17,7 @@ public class MyInterceptor implements HandlerInterceptor {
         if(flag!=null){
             return true;
         }else{
-            response.sendRedirect("/user/Login");
+            response.sendRedirect("/user/login");
             return false;
         }
 
