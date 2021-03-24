@@ -1,6 +1,7 @@
 package aynu.wuhan.controller;
 
 import aynu.wuhan.service.UserService;
+import aynu.wuhan.utils.CodeUtil;
 import aynu.wuhan.utils.PageModel;
 import aynu.wuhan.vo.UserVO;
 import com.sun.org.apache.xpath.internal.operations.Mod;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -30,11 +32,11 @@ public class UserController {
     }
 
     @RequestMapping("/checkUser")
-    public String checkUser(String userName, String userPw, Model model, HttpSession session){
-        System.out.println("userName = " + userName+ " " +"userPw"+userPw);
+    public String checkUser(String userName, String userPw, Model model, HttpSession session, HttpServletRequest request, String verify){
+        System.out.println("userName = " + userName+ " " +"userPw=" +userPw + " " +"verify="+verify);
         UserVO flag = userService.queryByName(userName,userPw);
         System.out.println("flag = " + flag);
-        if(flag !=null){
+        if(flag !=null && CodeUtil.checkVerifyCode(request)){
             //session添加当前用户信息
             session.setAttribute("userinfo",flag);
             //用户登录成功，跳转用户列表显示页面

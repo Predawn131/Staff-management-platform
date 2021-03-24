@@ -8,6 +8,27 @@
     <meta charset=utf-8">
     <title>系统登录 - 亚创企业信息管理平台</title>
     <link rel="stylesheet" type="text/css" href="/css/styleLogin.css" />
+    <script>
+        $('.button').click (
+            function() {
+                var formData = new FormData();
+                var verify = $('#yzm').val();
+                print(verify)
+                //点击提交时，判断验证码是否为空，如果为空，提示输入验证码
+                if (!verify) {
+                    alert('请输入验证码');
+                    return;
+                }
+                //如果不为空，将验证码塞进formData里面去
+                formData.append('verify', verify);
+
+                //不管提交成功与否，验证码都会更换
+                $('#captcha_img').click();
+            });
+        function changeVerifyCode(img) {
+            img.src = "../Kaptcha?" + Math.floor(Math.random() * 100);
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -24,10 +45,11 @@
                 <div id="password" class="input" aria-placeholder="密码">
                     <input type="password" name="userPw" id="mima" value="">
                 </div>
-
-        <p>
-            <a id="signUp" href="UserSignUp.html" class="input">跳转注册</a>
-        </p>
+                <div id="verify" class="input" aria-placeholder="验证码">
+                    <input type="text" name="verify" id="yzm" value="" autocomplete="off">
+                    <img id="captcha_img" alt="点击更换" title="点击更换"
+                         onclick="changeVerifyCode(this)" src="../Kaptcha"/>
+                </div>
         <button type="submit" class="button">登录</button>
         </form>
     </div>
