@@ -23,62 +23,104 @@
         <div class="navDiv">
             <div class="navName">导航</div>
             <div class="nav-list">
-                <ul>
-                    <li class="nav-tab waves-effect">
-                        <a href="/user/index" class="li-a active" ><i class='iconfont icon-home'></i> 主页
-                        </a>
-                    </li>
-                    <li class="nav-tab nav-ul">
-                        <a href="#" class="li-a" ><i class='iconfont icon-bussiness-man'></i> 管理员
-                            <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
-                        <div class="nav-box">
-                            <a href="/user/findUser" class="li-a-a">管理员列表</a>
-                            <a href="/user/toadd" class="li-a-a">添加管理员</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab nav-ul a_active nav-show">
-                        <a href="#" class="li-a active"><i class='iconfont icon-tongxunlu'></i> 职工管理
-                            <i class='iconfont icon-arrow-right' style="float: right; transform: rotateZ(90deg); transition: all 0.5s ease 0s;"></i></a>
-                        <div class="nav-box">
-                            <a href="/emp/findEmp" class="li-a-a active">职工列表</a>
-                            <a href="/emp/toadd" class="li-a-a">添加职工</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab nav-ul">
-                        <a href="#" class="li-a"><i class='iconfont icon-layers'></i> 部门管理
-                            <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
-                        <div class="nav-box">
-                            <a href="/dept/findDept" class="li-a-a">部门列表</a>
-                            <a href="/dept/toadd" class="li-a-a">添加部门</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab nav-ul">
-                        <a href="#" class="li-a">
-                            <i class='iconfont icon-earth'></i> 出差管理
-                            <i class='iconfont icon-arrow-right' style="float: right;"></i>
-                        </a>
-                        <div class="nav-box">
-                            <a href="/travel/findTvl" class="li-a-a">出差列表</a>
-                            <a href="/travel/toadd" class="li-a-a">出差派遣</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab nav-ul">
-                        <a href="#" class="li-a"><i class='iconfont icon-calendar'></i> 日志管理
-                            <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
-                        <div class="nav-box">
-                            <a href="/log/findLog" class="li-a-a">日志列表</a>
-                            <a href="/log/toadd" class="li-a-a">添加日志</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab waves-effect">
-                        <a href="/user/toupdatePw" class="li-a active" ><i class='iconfont icon-tool-hardware'></i> 修改密码
-                        </a>
-                    </li>
-                    <li class="nav-tab waves-effect">
-                        <a href="/user/exit" class="li-a active" ><i class='iconfont icon-switch'></i> 退出
-                        </a>
-                    </li>
-                </ul>
+                <c:if test="${userinfo.power == 0}">
+                    <ul>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/index" class="li-a active" ><i class='iconfont icon-home'></i> 主页
+                            </a>
+                        </li>
+
+                        <li class="nav-tab nav-ul a_active nav-show">
+                            <a href="#" class="li-a active"><i class='iconfont icon-tongxunlu'></i> 职工管理
+                                <i class='iconfont icon-arrow-right' style="float: right; transform: rotateZ(90deg); transition: all 0.5s ease 0s;"></i></a>
+                            <div class="nav-box">
+                                <a href="/emp/findEmp" class="li-a-a active">职工列表</a>
+                                <a href="/emp/toadd" class="li-a-a">添加职工</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a">
+                                <i class='iconfont icon-earth'></i> 出差管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i>
+                            </a>
+                            <div class="nav-box">
+                                <a href="/travel/findTvl" class="li-a-a">出差列表</a>
+                                <a href="/travel/toadd" class="li-a-a">出差派遣</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/toupdatePw" class="li-a active" ><i class='iconfont icon-tool-hardware'></i> 修改密码
+                            </a>
+                        </li>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/exit" class="li-a active" ><i class='iconfont icon-switch'></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+
+                </c:if>
+                <c:if test="${userinfo.power == 1}">
+                    <ul>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/index" class="li-a active" ><i class='iconfont icon-home'></i> 主页
+                            </a>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a" ><i class='iconfont icon-bussiness-man'></i> 管理员
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
+                            <div class="nav-box">
+                                <a href="/user/findUser" class="li-a-a">管理员列表</a>
+                                <a href="/user/toadd" class="li-a-a">添加管理员</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab nav-ul a_active nav-show">
+                            <a href="#" class="li-a active"><i class='iconfont icon-tongxunlu'></i> 职工管理
+                                <i class='iconfont icon-arrow-right' style="float: right; transform: rotateZ(90deg); transition: all 0.5s ease 0s;"></i></a>
+                            <div class="nav-box">
+                                <a href="/emp/findEmp" class="li-a-a active">职工列表</a>
+                                <a href="/emp/toadd" class="li-a-a">添加职工</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a"><i class='iconfont icon-layers'></i> 部门管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
+                            <div class="nav-box">
+                                <a href="/dept/findDept" class="li-a-a">部门列表</a>
+                                <a href="/dept/toadd" class="li-a-a">添加部门</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a">
+                                <i class='iconfont icon-earth'></i> 出差管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i>
+                            </a>
+                            <div class="nav-box">
+                                <a href="/travel/findTvl" class="li-a-a">出差列表</a>
+                                <a href="/travel/toadd" class="li-a-a">出差派遣</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a"><i class='iconfont icon-calendar'></i> 日志管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
+                            <div class="nav-box">
+                                <a href="/log/findLog" class="li-a-a">日志列表</a>
+                                <a href="/log/toadd" class="li-a-a">添加日志</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/toupdatePw" class="li-a active" ><i class='iconfont icon-tool-hardware'></i> 修改密码
+                            </a>
+                        </li>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/exit" class="li-a active" ><i class='iconfont icon-switch'></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+
+                </c:if>
+
             </div>
         </div>
     </div>

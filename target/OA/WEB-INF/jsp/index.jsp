@@ -37,6 +37,44 @@
         <div class="navDiv">
             <div class="navName">导航</div>
             <div class="nav-list">
+
+                <c:if test="${userinfo.power == 0}">
+                    <ul>
+                        <li class="nav-tab a_active waves-effect">
+                            <a href="/user/index" class="li-a active" ><i class='iconfont icon-home'></i> 主页
+                            </a>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a"><i class='iconfont icon-tongxunlu'></i> 职工管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
+                            <div class="nav-box">
+                                <a href="/emp/findEmp" class="li-a-a">职工列表</a>
+                                <a href="/emp/toadd" class="li-a-a">添加职工</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a">
+                                <i class='iconfont icon-earth'></i> 出差管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i>
+                            </a>
+                            <div class="nav-box">
+                                <a href="/travel/findTvl" class="li-a-a">出差列表</a>
+                                <a href="/travel/toadd" class="li-a-a">出差派遣</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/toupdatePw" class="li-a active" ><i class='iconfont icon-tool-hardware'></i> 修改密码
+                            </a>
+                        </li>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/exit" class="li-a active" ><i class='iconfont icon-switch'></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+                </c:if>
+                <c:if test="${userinfo.power == 1}">
                 <ul>
                     <li class="nav-tab a_active waves-effect">
                         <a href="/user/index" class="li-a active" ><i class='iconfont icon-home'></i> 主页
@@ -93,6 +131,7 @@
                         </a>
                     </li>
                 </ul>
+                </c:if>
             </div>
         </div>
     </div>

@@ -52,62 +52,102 @@
         <div class="navDiv">
             <div class="navName">导航</div>
             <div class="nav-list">
-                <ul>
-                    <li class="nav-tab waves-effect">
-                        <a href="/user/index" class="li-a " ><i class='iconfont icon-home'></i> 主页
-                        </a>
-                    </li>
-                    <li class="nav-tab nav-ul a_active nav-show">
-                        <a href="#" class="li-a active" ><i class='iconfont icon-bussiness-man'></i> 管理员
-                            <i class='iconfont icon-arrow-right' style="float: right; transform: rotateZ(90deg); transition: all 0.5s ease 0s;"></i></a>
-                        <div class="nav-box">
-                            <a href="/user/findUser" class="li-a-a active">管理员列表</a>
-                            <a href="/user/toadd" class="li-a-a">添加管理员</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab nav-ul">
-                        <a href="#" class="li-a"><i class='iconfont icon-tongxunlu'></i> 职工管理
-                            <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
-                        <div class="nav-box">
-                            <a href="/emp/findEmp" class="li-a-a">职工列表</a>
-                            <a href="/emp/toadd" class="li-a-a">添加职工</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab nav-ul">
-                        <a href="#" class="li-a"><i class='iconfont icon-layers'></i> 部门管理
-                            <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
-                        <div class="nav-box">
-                            <a href="/dept/findDept" class="li-a-a">部门列表</a>
-                            <a href="/dept/toadd" class="li-a-a">添加部门</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab nav-ul">
-                        <a href="#" class="li-a">
-                            <i class='iconfont icon-earth'></i> 出差管理
-                            <i class='iconfont icon-arrow-right' style="float: right;"></i>
-                        </a>
-                        <div class="nav-box">
-                            <a href="/travel/findTvl" class="li-a-a">出差列表</a>
-                            <a href="/travel/toadd" class="li-a-a">出差派遣</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab nav-ul">
-                        <a href="#" class="li-a"><i class='iconfont icon-calendar'></i> 日志管理
-                            <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
-                        <div class="nav-box">
-                            <a href="/log/findLog" class="li-a-a">日志列表</a>
-                            <a href="/log/toadd" class="li-a-a">添加日志</a>
-                        </div>
-                    </li>
-                    <li class="nav-tab waves-effect">
-                        <a href="/user/toupdatePw" class="li-a active" ><i class='iconfont icon-tool-hardware'></i> 修改密码
-                        </a>
-                    </li>
-                    <li class="nav-tab waves-effect">
-                        <a href="/user/exit" class="li-a active" ><i class='iconfont icon-switch'></i> 退出
-                        </a>
-                    </li>
-                </ul>
+                <c:if test="${userinfo.power == 0}">
+                    <ul>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/index" class="li-a " ><i class='iconfont icon-home'></i> 主页
+                            </a>
+                        </li>
+
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a"><i class='iconfont icon-tongxunlu'></i> 职工管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
+                            <div class="nav-box">
+                                <a href="/emp/findEmp" class="li-a-a">职工列表</a>
+                                <a href="/emp/toadd" class="li-a-a">添加职工</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a">
+                                <i class='iconfont icon-earth'></i> 出差管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i>
+                            </a>
+                            <div class="nav-box">
+                                <a href="/travel/findTvl" class="li-a-a">出差列表</a>
+                                <a href="/travel/toadd" class="li-a-a">出差派遣</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/toupdatePw" class="li-a active" ><i class='iconfont icon-tool-hardware'></i> 修改密码
+                            </a>
+                        </li>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/exit" class="li-a active" ><i class='iconfont icon-switch'></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+                </c:if>
+                <c:if test="${userinfo.power == 1}">
+                    <ul>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/index" class="li-a " ><i class='iconfont icon-home'></i> 主页
+                            </a>
+                        </li>
+                        <li class="nav-tab nav-ul a_active nav-show">
+                            <a href="#" class="li-a active" ><i class='iconfont icon-bussiness-man'></i> 管理员
+                                <i class='iconfont icon-arrow-right' style="float: right; transform: rotateZ(90deg); transition: all 0.5s ease 0s;"></i></a>
+                            <div class="nav-box">
+                                <a href="/user/findUser" class="li-a-a active">管理员列表</a>
+                                <a href="/user/toadd" class="li-a-a">添加管理员</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a"><i class='iconfont icon-tongxunlu'></i> 职工管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
+                            <div class="nav-box">
+                                <a href="/emp/findEmp" class="li-a-a">职工列表</a>
+                                <a href="/emp/toadd" class="li-a-a">添加职工</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a"><i class='iconfont icon-layers'></i> 部门管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
+                            <div class="nav-box">
+                                <a href="/dept/findDept" class="li-a-a">部门列表</a>
+                                <a href="/dept/toadd" class="li-a-a">添加部门</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a">
+                                <i class='iconfont icon-earth'></i> 出差管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i>
+                            </a>
+                            <div class="nav-box">
+                                <a href="/travel/findTvl" class="li-a-a">出差列表</a>
+                                <a href="/travel/toadd" class="li-a-a">出差派遣</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab nav-ul">
+                            <a href="#" class="li-a"><i class='iconfont icon-calendar'></i> 日志管理
+                                <i class='iconfont icon-arrow-right' style="float: right;"></i></a>
+                            <div class="nav-box">
+                                <a href="/log/findLog" class="li-a-a">日志列表</a>
+                                <a href="/log/toadd" class="li-a-a">添加日志</a>
+                            </div>
+                        </li>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/toupdatePw" class="li-a active" ><i class='iconfont icon-tool-hardware'></i> 修改密码
+                            </a>
+                        </li>
+                        <li class="nav-tab waves-effect">
+                            <a href="/user/exit" class="li-a active" ><i class='iconfont icon-switch'></i> 退出
+                            </a>
+                        </li>
+                    </ul>
+                </c:if>
+
             </div>
         </div>
     </div>
@@ -142,11 +182,12 @@
 
             <table class="providerTable" cellpadding="0" cellspacing="0">
                 <tr class="firstTr">
-                    <th width="10%">id</th>
+                    <th width="5%">id</th>
                     <th width="10%">用户名</th>
                     <th width="10%">真实姓名</th>
                     <th width="15%">邮箱</th>
-                    <th width="10%">性别</th>
+                    <th width="5%">性别</th>
+                    <th width="5%">身份</th>
                     <th width="10%">籍贯</th>
                     <th width="25%">操作</th>
                 </tr>
@@ -157,6 +198,14 @@
                         <td>${user.userRelname}</td>
                         <td>${user.userEmail}</td>
                         <td>${user.userSex}</td>
+                        <td>
+                            <c:if test="${user.power==0}">
+                                普通用户
+                            </c:if>
+                            <c:if test="${user.power==1}">
+                                <font color="red">管理员</font>
+                            </c:if>
+                        </td>
                         <td>${user.userCity}</td>
                         <td class="caozuo">
                             <a href="/user/view?userId=${user.userId}" style="width: 60px;" class="button button-3d button-primary button-rounded">查看</a>

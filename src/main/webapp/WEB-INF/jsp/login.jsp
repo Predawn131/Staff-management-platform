@@ -36,9 +36,11 @@
         <div class="content">
             <div class="switch">
                 <h1 id="login">登录</h1>
+                <h3 id="login1">${msg}</h3>
             </div>
 
             <form method="post" action="/user/checkUser"  class="login">
+
                 <div id="userName" class="input" aria-placeholder="用户名">
                     <input type="text" name="userName" id="user" value="" autocomplete="off">
                 </div>
@@ -48,7 +50,7 @@
                 <div id="verify" class="input" aria-placeholder="验证码">
                     <input type="text" name="verify" id="yzm" value="" autocomplete="off">
                     <img id="captcha_img" alt="点击更换" title="点击更换"
-                         onclick="changeVerifyCode(this)" src="../Kaptcha"/>
+                         onclick="changeVerifyCode(this)" src="../Kaptcha" style="margin: 5px 35px"/>
                 </div>
         <button type="submit" class="button">登录</button>
         </form>

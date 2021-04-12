@@ -5,17 +5,18 @@
 <mapper namespace="aynu.wuhan.dao.UserDao">
 
     <insert id="addUser" parameterType="aynu.wuhan.vo.UserVO">
-        INSERT INTO `userTab` (`user_name`, `user_pw`, `user_email`, `user_sex`, `user_age`, `user_info`, `user_city`, `user_relname`)
-        VALUES (#{userName}, #{userPw}, #{userEmail}, #{userSex}, #{userAge}, #{userInfo}, #{userCity}, #{userRelname})
+        INSERT INTO `userTab` (`user_name`, `user_pw`, `user_email`, `user_sex`, `user_age`, `user_info`, `user_city`, `user_relname`, `power`)
+        VALUES (#{userName}, #{userPw}, #{userEmail}, #{userSex}, #{userAge}, #{userInfo}, #{userCity}, #{userRelname}, #{power})
     </insert>
 
     <delete id="deleteUserById" parameterType="int">
+--         DELETE FROM `usertab` WHERE (`user_id`=#{userId})
         UPDATE `usertab` SET `user_display`=0 WHERE (`user_id`=#{userId})
     </delete>
 
     <update id="updateUser" parameterType="aynu.wuhan.vo.UserVO">
         UPDATE `usertab`
-        SET `user_name`=#{userName}, `user_pw`=#{userPw}, `user_email`=#{userEmail}, `user_sex`=#{userSex}, `user_age`=#{userAge}, `user_info`=#{userInfo}, `user_city`=#{userCity}, `user_relname`=#{userRelname}
+        SET `user_name`=#{userName}, `user_pw`=#{userPw}, `user_email`=#{userEmail}, `user_sex`=#{userSex}, `user_age`=#{userAge}, `user_info`=#{userInfo}, `user_city`=#{userCity}, `user_relname`=#{userRelname},`power`=#{power}
         WHERE (`user_id`=#{userId})
 
     </update>

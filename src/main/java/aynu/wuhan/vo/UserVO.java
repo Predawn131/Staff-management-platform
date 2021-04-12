@@ -10,7 +10,16 @@ public class UserVO {
     private String userInfo;
     private String userCity;
     private int userDisplay;
-    private  String userRelname;
+    private int power;
+    private String userRelname;
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
 
     public int getUserId() {
         return userId;
@@ -103,8 +112,9 @@ public class UserVO {
                 ", userAge=" + userAge +
                 ", userInfo='" + userInfo + '\'' +
                 ", userCity='" + userCity + '\'' +
-                ", userDisplay=" + userDisplay +'\'' +
+                ", userDisplay=" + userDisplay +
                 ", userRelname=" + userRelname +
+                ", power='" + power + '\''+
                 '}';
     }
 }

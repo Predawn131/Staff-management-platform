@@ -12,7 +12,9 @@ public interface UserDao {
     int deleteUserById(int id);
 
     int updateUser(UserVO uservo);
+
     int updateUserByPw(@Param("id") String id,@Param("pw")  String pw);
+
     UserVO queryById(int id);
 
     List<UserVO> queryAllUser();

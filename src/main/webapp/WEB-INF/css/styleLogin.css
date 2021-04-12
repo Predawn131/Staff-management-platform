@@ -60,6 +60,11 @@ body {
     border-bottom: rgba(125, 116, 255,.8) solid 2px;
     cursor: default;/* 默认光标样式 */
 }
+.switch h3 {
+    text-align: center;
+    color: #e74c3c;
+    cursor: default;/* 默认光标样式 */
+}
 
 .input input {
     outline: none;
@@ -117,8 +122,8 @@ form span {
 }
 
 form {
-    width: 12rem;
-    margin: 1rem 0 0;
+    width: 13rem;
+    margin: 16px auto;
 }
 
 form .input {
@@ -141,7 +146,7 @@ form button {
     display: block;
     border: none;
     outline: none;
-    margin: 2rem 61px 0;
+    margin: 3rem 61px 0;
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -153,7 +158,7 @@ form button {
 form button:hover {
     border: none;
     outline: none;
-    margin: 2rem -7px 0;
+    margin: 3rem -7px 0;
     width: 100%;
     height: 3.5rem;
     border-radius: 3rem;

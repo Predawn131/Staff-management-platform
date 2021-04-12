@@ -36,7 +36,7 @@ public class UserController {
         System.out.println("userName = " + userName+ " " +"userPw=" +userPw + " " +"verify="+verify);
         UserVO flag = userService.queryByName(userName,userPw);
         System.out.println("flag = " + flag);
-        if(flag !=null && CodeUtil.checkVerifyCode(request)){
+        if(flag !=null && CodeUtil.checkVerifyCode(request)&&flag.getUserDisplay()==1){
             //session添加当前用户信息
             session.setAttribute("userinfo",flag);
             //用户登录成功，跳转用户列表显示页面
@@ -45,7 +45,7 @@ public class UserController {
             System.out.println(list.size());
             return "index";
         }else{
-            model.addAttribute("msg","错误的用户名密码");
+            model.addAttribute("msg","用户名或密码或验证码错误");
             return "login";
         }
 
@@ -119,8 +119,9 @@ public class UserController {
     }
     @RequestMapping("/update")
     public String update(UserVO uservo){
-        System.out.println("uservo = " + uservo);
+
         userService.updateUser(uservo);
+        System.out.println("uservo = " + uservo);
         return "redirect:/user/findUser";
     }
     @RequestMapping("/toupdatePw")

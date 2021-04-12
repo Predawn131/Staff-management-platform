@@ -8,7 +8,7 @@ public class CodeUtil {
             com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
             //这里相当于 request.getParameter("verifyCodeActual");
             String verify = HttpServletRequestUtil.getString(request, "verify");
-            if(verify == null || !verify.equals(verifyCodeExpected)){
+            if(verify == null || !verify.equalsIgnoreCase(verifyCodeExpected)){
                 return false;
             }
             return true;
